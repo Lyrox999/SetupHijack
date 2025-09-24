@@ -10,7 +10,7 @@
     <StandardDirectory Id="ProgramFilesFolder">
       <Directory Id="INSTALLFOLDER" Name="InstallRenge">
         <Component Id="RengeComponent" Guid="*">
-          `C:\\USers\\Fantastic\\Desktop\\DEMO\\Renge_x64.exe`
+          `c:\\Users\\Fantastic\\Desktop\\DEMO\\Renge_x64.exe`
           <File Id="LaunchPayloadBat" Source="launch_payload.bat"/>
         </Component>
       </Directory>

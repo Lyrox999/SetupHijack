@@ -3,6 +3,11 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+# Build artifacts
+SetupHijack.skiplist
+install.wixpdb
+SetupHijack.exe
+
 # User-specific files
 *.rsuser
 *.suo
