@@ -147,7 +147,7 @@ SetupHijack.exe 3 1       # Clean mode for both %%TEMP%% and %%APPDATA%%
 
 Below is a screenshot showing SetupHijack in action, deploying an implant during a privileged installer run:
 
-![Example Use to Deploy An Implant](docs/example_execution.png)
+![Example Use to Deploy An Implant](Example.png)
 
 ## Security Notes
 
