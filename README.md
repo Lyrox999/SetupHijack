@@ -141,7 +141,7 @@ C:\Users\Fantastic\Desktop\Sayuri\InfectElevatedSetups>SetupHijack.exe
 
 Below is a screenshot showing SetupHijack in action, deploying an implant during a privileged installer run:
 
-![Example Use to Deploy An Implant](docs/example_execution.png)
+![Example Use to Deploy An Implant](Example.png)
 
 ## Security Notes
 
