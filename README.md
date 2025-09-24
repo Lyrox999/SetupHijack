@@ -12,6 +12,8 @@
 - Can infect `.exe`, `.msi`, and batch files (e.g., `sysinfo`, `netstat`, `ipconfig`).
 - Designed for red team, penetration testing, and security research use only.
 
+The intended use of this tool is to run in the background on a compromised user account with privileges, in order to elevate another process by hijacking installer/updater file drops.
+
 ## How It Works
 
 1. **SetupHijack** continuously scans `%TEMP%` (and subdirectories) for new or modified installer files.
@@ -135,19 +137,11 @@ C:\Users\Fantastic\Desktop\Sayuri\InfectElevatedSetups>SetupHijack.exe
 [2025-09-24 15:21:53] [SetupHijack] Total infections this session: 3
 ```
 
-To restore original files from backups:
-
-```sh
-SetupHijack.exe 1         # Clean mode for %%TEMP%%
-SetupHijack.exe clean     # Same as above
-SetupHijack.exe 3 1       # Clean mode for both %%TEMP%% and %%APPDATA%%
-```
-
 ## Example Use to Deploy An Implant
 
 Below is a screenshot showing SetupHijack in action, deploying an implant during a privileged installer run:
 
-![Example Use to Deploy An Implant](Example.png)
+![Example Use to Deploy An Implant](docs/example_execution.png)
 
 ## Security Notes
 
@@ -157,11 +151,7 @@ Below is a screenshot showing SetupHijack in action, deploying an implant during
 - Always use in a controlled environment.
 - If you discover a CVE or get bounty with this tool, credit us!
 
-> **Note:** Targeting a single directory (such as `%TEMP%`) at a time can increase the likelihood of winning any time-of-creation/time-of-use (TOCTOU) race condition, as it allows for faster polling and less contention. For maximum reliability, run multiple instances of SetupHijack, each focused on a single directory.
-
-> **Payload Elevation:** For best results, ensure your payload (the EXE you want to run elevated) includes a manifest requesting elevation (requireAdministrator), and is signed with a valid code-signing certificate that includes an Authenticode timestamp. This increases the chance of bypassing installer and OS trust checks.
-
-> **Purpose:** The intended use of this tool is to run in the background on a compromised user account with privileges, in order to elevate another process by hijacking installer/updater file drops.
+Targeting a single directory (such as `%TEMP%`) at a time can increase the likelihood of winning any time-of-creation/time-of-use (TOCTOU) race condition, as it allows for faster polling and less contention. For maximum reliability, run multiple instances of SetupHijack, each focused on a single directory. For optimum results, ensure your payload (the EXE you want to run elevated) includes a manifest requesting elevation (requireAdministrator), and is signed with a valid code-signing certificate that includes an Authenticode timestamp. This increases the chance of bypassing installer and OS trust checks on installers.
 
 ---
 
