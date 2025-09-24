@@ -48,7 +48,7 @@ SetupHijack.exe <payload.exe>    # Use specified payload for .exe (unless argume
 ```
 
 - Run **SetupHijack.exe** before or during a privileged install/update process.
-- By default, the tool scans all common drop locations: %%TEMP%%, %%APPDATA%%, and %%USERPROFILE%%\Downloads.
+- By default, the tool scans all common drop locations: %TEMP%, %APPDATA%, and %USERPROFILE%\Downloads.
 - You can disable any location with the `-notemp`, `-noappdata`, or `-nodownloads` flags.
 - The `clean` flag restores backups in all enabled locations. The `verbose` flag logs all actions.
 - For remote escalation, use with `shadow.exe` or similar tools on Terminal Services.
