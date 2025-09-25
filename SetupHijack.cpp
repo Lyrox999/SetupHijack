@@ -1,6 +1,5 @@
 
-/*
- * SetupHijack.cpp
+/* SetupHijack.cpp
  * ===============
  *
  * SetupHijack is a security research tool that exploits race conditions and insecure file 
@@ -202,6 +201,7 @@ int IsFileHijacked(const wchar_t* path, unsigned long hash) {
     }
     return 0;
 }
+
 void AddHijackedFile(const wchar_t* path, unsigned long hash) {
     if (!IsFileHijacked(path, hash) && hijackedCount < MAX_HIJACKED) {
         wcsncpy_s(hijackedEntries[hijackedCount].path, MAX_PATH, path, _TRUNCATE);
