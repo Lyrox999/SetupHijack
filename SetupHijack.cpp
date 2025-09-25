@@ -3,11 +3,15 @@
  * SetupHijack.cpp
  * ===============
  *
- * SetupHijack is a security research tool that exploits race conditions and insecure file handling in Windows installer and update processes.
- * It targets scenarios where privileged installers or updaters drop files in %TEMP% or %APPDATA% (or both), allowing an attacker to replace these files before they are executed with elevated privileges.
+ * SetupHijack is a security research tool that exploits race conditions and insecure file 
+ * handling in Windows installer and update processes.
+ * 
+ * It targets scenarios where privileged installers or updaters drop files in %TEMP% or 
+ * %APPDATA% and %USERPROFILE%\Downloads, allowing an attacker to replace these files before 
+ * they are executed with elevated privileges.
  *
  * Key Features:
- * - Does NOT require elevated permissions to run.
+ * - Does NOT require elevated permissions to run. (run in an Administrator session w/o UAC)
  * - Does NOT use file system notifications (polls for changes instead).
  * - Exploits weaknesses in Authenticode code signing and installer trust models.
  * - Can infect .exe, .msi, and .bat files (e.g., sysinfo, netstat, ipconfig).

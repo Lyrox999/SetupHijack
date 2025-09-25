@@ -153,6 +153,17 @@ Below is a screenshot showing SetupHijack in action, deploying an implant during
 
 Targeting a single directory (such as `%TEMP%`) at a time can increase the likelihood of winning any time-of-creation/time-of-use (TOCTOU) race condition, as it allows for faster polling and less contention. For maximum reliability, run multiple instances of SetupHijack, each focused on a single directory. For optimum results, ensure your payload (the EXE you want to run elevated) includes a manifest requesting elevation (requireAdministrator), and is signed with a valid code-signing certificate that includes an Authenticode timestamp. This increases the chance of bypassing installer and OS trust checks on installers.
 
+## Findings
+
+- Zoom 6.6.1 (15968) uses %AppData% for .exe allowing lateral process movement and
+  process spoofing (send elevation request from Zoom update).
+
+- msiexec.exe when running install.msi executes under NT AUTHORITY\SYSTEM
+
+- Wireshark update exe comes through %Temp%
+
+- Visual Studio code-signing checks on updates prevent exploitation, (lightly tested .VSIX)
+
 ---
 
 These files are available under an Attribution-NonCommercial-NoDerivatives 4.0 International license.
