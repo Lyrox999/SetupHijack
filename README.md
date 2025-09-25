@@ -38,10 +38,10 @@ nmake PAYLOAD=c:\Path\to\your\payload.exe
 ### Run (Options)
 
 ```sh
-SetupHijack.exe                  # Scan %%TEMP%%, %%APPDATA%%, and %%USERPROFILE%%\Downloads (default)
-SetupHijack.exe -notemp          # Disable scanning %%TEMP%%
-SetupHijack.exe -noappdata       # Disable scanning %%APPDATA%%
-SetupHijack.exe -nodownloads     # Disable scanning %%USERPROFILE%%\Downloads
+SetupHijack.exe                  # Scan %TEMP%, %APPDATA%, and %USERPROFILE%\Downloads (default)
+SetupHijack.exe -notemp          # Disable scanning %TEMP%
+SetupHijack.exe -noappdata       # Disable scanning %APPDATA%
+SetupHijack.exe -nodownloads     # Disable scanning %USERPROFILE%\Downloads
 SetupHijack.exe clean            # Clean mode (restores .bak backups in all enabled locations)
 SetupHijack.exe verbose          # Verbose mode (log all actions)
 SetupHijack.exe <payload.exe>    # Use specified payload for .exe (unless argument is a recognized option)
