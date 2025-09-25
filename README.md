@@ -241,6 +241,8 @@ C:\Users\Fantastic\Desktop\Sayuri\JBL_and_WinAudioCore_0day>dir JBL_QuantumENGIN
 ``` 
 
 
+![SetupHijack Vulnerability Discovery Chart](Chart.png)
+
 ---
 
 These files are available under an Attribution-NonCommercial-NoDerivatives 4.0 International license.
