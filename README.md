@@ -14,7 +14,7 @@
 
 The intended use of this tool is to run in the background on a compromised user account with privileges, in order to elevate another process by hijacking installer/updater file drops. 
 
-The chart below shows real-world example use cases of this exploit in multiple scenarios that can be used for UAC bypass. UAC bypasses are considered a security boundary when running under Adminless. Exploitation of privileged Administrator operations provided generic accessibility for malicious code to side-load or escalate process privileges.
+The chart below shows real-world example use cases of this exploit in multiple scenarios that can be used for UAC bypass. UAC bypasses are considered a security boundary when running under Adminless and are a common "attacker requirement" for disabling security controls. Exploitation of privileged Administrator operations provides generic exploit accessibility for malicious code to side-load or escalate process privileges. This tool can be used to identify additional applications which are exposed to the same types of risk, an attacker can wait for execution of these processes as a means to gain elevated rights without disrupting user behaviors. 
 
 ![SetupHijack Vulnerability Discovery Chart](Chart.png)
 
