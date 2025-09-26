@@ -189,7 +189,7 @@ Targeting a single directory (such as `%TEMP%`) at a time can increase the likel
 
 - Visual Studio code-signing checks on updates prevent exploitation, (lightly tested .VSIX)
 
-- Texas Instrument Code Composer Installer can be exploited for auth bypass 09/25/2025.
+- Texas Instrument Code Composer Installer can be exploited for UAC auth bypass 09/25/2025.
   (ccs_setup_20.3.0.00014.exe)
 
 ```
@@ -213,7 +213,8 @@ Targeting a single directory (such as `%TEMP%`) at a time can increase the likel
 [2025-09-25 14:40:29] [SetupHijack] New infections this run: 1
 ```
 
-- Cursor IDE has been observed creating .bat files and command history in %TEMP% that can be exploited. 
+- Cursor IDE has been observed creating .bat files and command history in %TEMP% that can be exploited to inject
+  commands into the Cursor history, elevation limited. 
 
 
 - JBL Quantum Engine contains a (now patched) Command Injection flaw that runs "net" (including .bat) from the
