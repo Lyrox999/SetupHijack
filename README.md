@@ -12,7 +12,11 @@
 - Can infect `.exe`, `.msi`, and batch files (e.g., `sysinfo`, `netstat`, `ipconfig`).
 - Designed for red team, penetration testing, and security research use only.
 
-The intended use of this tool is to run in the background on a compromised user account with privileges, in order to elevate another process by hijacking installer/updater file drops.
+The intended use of this tool is to run in the background on a compromised user account with privileges, in order to elevate another process by hijacking installer/updater file drops. 
+
+The chart below shows real-world example use cases of this exploit in multiple scenarios that can be used for UAC bypass. UAC bypasses are considered a security boundary when running under Adminless. Exploitation of privileged Administrator operations provided generic accessibility for malicious code to side-load or escalate process privileges.
+
+![SetupHijack Vulnerability Discovery Chart](Chart.png)
 
 ## How It Works
 
@@ -153,7 +157,7 @@ Below is a screenshot showing SetupHijack in action, deploying an implant during
 
 Targeting a single directory (such as `%TEMP%`) at a time can increase the likelihood of winning any time-of-creation/time-of-use (TOCTOU) race condition, as it allows for faster polling and less contention. For maximum reliability, run multiple instances of SetupHijack, each focused on a single directory. For optimum results, ensure your payload (the EXE you want to run elevated) includes a manifest requesting elevation (requireAdministrator), and is signed with a valid code-signing certificate that includes an Authenticode timestamp. This increases the chance of bypassing installer and OS trust checks on installers.
 
-## Findings
+## VulnerabiFindings
 
 - Zoom 6.6.1 (15968) uses %AppData% for .exe install and updates allowing lateral process movement and
   process spoofing (e.g. send elevation request from Zoom update). Executables can be manipulated easily
@@ -240,10 +244,4 @@ C:\Users\Fantastic\Desktop\Sayuri\JBL_and_WinAudioCore_0day>dir JBL_QuantumENGIN
                1 File(s)    139,327,096 bytes
                0 Dir(s)  237,500,821,504 bytes free
 ``` 
-
-
-![SetupHijack Vulnerability Discovery Chart](Chart.png)
-
----
-
 These files are available under an Attribution-NonCommercial-NoDerivatives 4.0 International license.
