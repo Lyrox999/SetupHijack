@@ -159,6 +159,12 @@ Targeting a single directory (such as `%TEMP%`) at a time can increase the likel
 
 ## Vulnerabilties Identified
 
+The following non-exhaustive list has been identified with the "best case scenarios" running untrusted .MSI resulting in "NT AUTHORITY\SYSTEM" but many "UAC elevated"
+processes will often run through .bat files. Because the execution happens under the same USER SID, as %TEMP% is unique to the USER SID built under the %USERPROFILE%
+as part of internal session creation, you can escalate within same-sesssion commands to high integrity full permission through manipulation of .bat which inherits 
+parent process rights. "Temporary File Elevated Command Execution" is a common finding - which can be used for UAC bypass and execution under Admin-Less as user 
+prompting on secure Desktop shows the exploited application (e.g. a Zoom Update). 
+
 - Zoom 6.6.1 (15968) uses %AppData% for .exe install and updates allowing lateral process movement and
   process spoofing (e.g. send elevation request from Zoom update). Executables can be manipulated easily
   for credential stealing attacks and malicious purposes.
